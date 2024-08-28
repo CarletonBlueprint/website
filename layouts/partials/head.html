@@ -62,6 +62,23 @@
     {{ $image = print .Params.preview }}{{ end }}
 
 
+  {{ if eq .Params.layout "hack_the_tunnels" }}
+    {{ $image = print .Params.preview }}{{ end }}
+
+
+  {{ if eq .Params.layout "jobuary" }}
+    {{ $image = print .Params.preview }}{{ end }}
+
+
+  {{ if eq .Params.layout "faq-topic" }}
+    {{ $description = print .Params.description }}
+    {{ $image = print .Params.header_image_url }}{{ end }}
+
+
+  {{ if eq .Params.layout "faq-question" }}
+    {{ $description = print .Params.summary }}{{ end }}
+
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ $url }}" />

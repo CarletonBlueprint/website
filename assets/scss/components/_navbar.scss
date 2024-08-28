@@ -290,15 +290,14 @@ $navNumOfItemBlocks: 4;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #dddddd;
-  // background-color: black;
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.025), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
 .navbar {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  height: 60px;
+  height: calc(60px + 0.7rem);
   color: white;
   background-color: white;
   padding-left: calc(5% + 9px);
@@ -340,8 +339,6 @@ $navNumOfItemBlocks: 4;
   color: black;
   text-transform: uppercase;
   margin-left: auto;
-  padding-top: 0.4rem;
-  padding-bottom: 0.3rem;
   display: flex;
   justify-content: space-between;
 
@@ -353,7 +350,6 @@ $navNumOfItemBlocks: 4;
     margin: 0;
 
     & > li > a {
-      // display: block;
       text-decoration: none;
       padding: 0 15px;
     }
@@ -415,8 +411,7 @@ $navNumOfItemBlocks: 4;
 /* movile nav bar */
 .header {
   background: rgb(255, 255, 255);
-  border-top: 2px solid #ffffff;
-  border-bottom: 2px solid #dddddd;
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.025), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
   padding-left: calc(5% + 9px);
   padding-right: calc(5% + 9px);
   position: sticky;
@@ -518,7 +513,8 @@ $navNumOfItemBlocks: 4;
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 420px;
+  // if adding list items from menu, update below
+  max-height: 600px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -538,7 +534,7 @@ $navNumOfItemBlocks: 4;
   top: 0;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1050px) {
   .navbar-items {
     display: none;
   }
@@ -556,7 +552,7 @@ $navNumOfItemBlocks: 4;
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1050px) {
   .navbar-items {
     display: flex;
   }

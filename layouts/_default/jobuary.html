@@ -1,0 +1,63 @@
+{{ define "main" }}
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <div class="jobuary">
+    <div class="woa-background-wrap">
+      <lottie-player
+        class="woa-background"
+        src="/lottie/jobuary.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+    <div class="jobuary-background-wrap">
+      <!-- <img src="https://media.giphy.com/media/cPlsuCWPznPZ98kV2J/giphy.gif" class="woa-background" /> -->
+    </div>
+    <div class="jobuary-page">
+      <div class="woa-header">
+        <div>
+          <img class="jobuary__logo" src="/images/jobuary-logo.png" />
+        </div>
+        <div class="jobuary__slogan">Kickstart Your Career In Tech</div>
+        <div>
+          <a href="#about"><button class="header-button">Learn More</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jobuary-content" id="about">
+    <h1>Job Search Presentations</h1>
+    <div class="jobuary-events">
+      {{ range sort (.Site.Taxonomies.tags.jobsearch) "Date" }}
+        <a class="event_card_link hvr-float" href="{{ .RelPermalink }}"
+          >{{- partial "event_card.html" . -}}</a
+        >
+      {{ end }}
+    </div>
+    <h1>Career Services</h1>
+    <div class="jobuary-events">
+      {{ range sort (.Site.Taxonomies.tags.service) "Date" }}
+        <a class="event_card_link hvr-float" href="{{ .RelPermalink }}"
+          >{{- partial "event_card.html" . -}}</a
+        >
+      {{ end }}
+    </div>
+    <h1>Industry Speakers</h1>
+    <div class="jobuary-events">
+      {{ range sort (.Site.Taxonomies.tags.industryspeaker) "Date" }}
+        <a class="event_card_link hvr-float" href="{{ .RelPermalink }}"
+          >{{- partial "event_card.html" . -}}</a
+        >
+      {{ end }}
+    </div>
+    <h1>Get Involved</h1>
+    <div class="jobuary-events">
+      {{ range sort (.Site.Taxonomies.tags.getinvolved) "Date" }}
+        <a class="event_card_link hvr-float" href="{{ .RelPermalink }}"
+          >{{- partial "event_card.html" . -}}</a
+        >
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
